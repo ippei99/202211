@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="これはHTMLCSSの課題作品です。"><!-- ページ説明文 -->
+  <meta name="robots" content="noindex, nofollow"><!-- インデックス不要 -->
+  <meta name="keywords" content="鎌倉幕府, 御成敗式目"><!-- ページキーワード -->
+  <title>幕府概要</title>
+  <link rel="icon" href="images/favicon.png" type="image/png"><!-- ファビコン -->
+  <!-- css -->
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css"><!-- リセットCSS -->
+  <link href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet"><!-- フォントオーサムのcss -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"><!-- GoogleフォントのCSS３行（Reggae One） -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher&family=Reggae+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- ヘッダー -->
+  <header class="page-header">
+    <!-- ロゴ -->
+    <h1>
+      <a href="index.html">
+        <img class="logo" src="images/rogo2.png" alt="鎌倉幕府ホーム">
+      </a>
+    </h1>
+    <!-- メインナビ -->
+    <nav>
+      <ul class="main-nav">
+        <li><a href="info.html">幕府概要</a></li>
+        <li><a href="goseibai.html">御成敗式目</a></li>
+        <li><a href="recruit.html">登用</a></li>
+        <li><a href="contact.html">御意見箱</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 幕府概要 -->
+    <article class="main-etc-a2">
+      <span id="m-title">
+        <h2>幕府概要</h2>
+      </span>
+      <hr>
+      <div id="info">
+        <table>
+          <tr>
+            <th>創設</th>
+            <td>文治元年(1185年)</td>
+          </tr>
+          <tr>
+            <th>政庁所在地</th>
+            <td>相模国鎌倉</td>
+          </tr>
+          <tr>
+            <th>人口</th>
+            <td>757万人</td>
+          </tr>
+          <tr>
+            <th>代表者</th>
+            <td>源実朝</td>
+          </tr>
+          <tr>
+            <th>家紋</th>
+            <td class="td-k">
+              <img src="images/kamonn.png" alt="笹竜胆(ササリンドウ)" class="kamonn">
+            </td>
+          </tr>
+          <tr>
+            <th>執権</th>
+            <td>北条義時</td>
+          </tr>
+        </table>
+      </div>
+      <div id="update">
+        <p>1219年更新（義時）</p>
+      </div>
+    </article>
+  </main>
+
+  <!-- フッター -->
+  <footer class="page-footer">
+    <p>鎌倉幕府政所</p>
+    <p><small>&copy; 1203年 北条家</small></p>
+  </footer>
+  <!-- トップへ戻るボタン -->
+  <div id="t-btn">
+    <a href="#">上</a>
+  </div>
+
+  <script>
+    'use strict'
+
+    // 指定ID等にアニメーション
+    document.getElementById('m-title').animate(
+      { color: ['white', 'black'], }, // 白から黒へ
+      { fill: "forwards", duration: 1000 } // 終了時の状態で止まる,アニメーション時間(m秒)
+    );
+    document.body.animate(
+      { color: ['white', 'black'], },
+      { fill: "forwards", duration: 1500 }
+    );
+
+    // トップへ戻るボタンの表示設定
+    window.addEventListener("scroll", function () {
+      const topB = document.getElementById('t-btn');
+      const sc = window.pageYOffset;
+      if (sc > 500) {
+        topB.style.display = 'block';
+      } else topB.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>

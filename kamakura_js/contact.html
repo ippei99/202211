@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="これはHTMLCSSの課題作品です。"><!-- ページ説明文 -->
+  <meta name="robots" content="noindex, nofollow"><!-- インデックス不要 -->
+  <meta name="keywords" content="鎌倉幕府, 御成敗式目"><!-- ページキーワード -->
+  <title>ご意見箱</title>
+  <link rel="icon" href="images/favicon.png" type="image/png"><!-- ファビコン -->
+  <!-- css -->
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css"><!-- リセットCSS -->
+  <link href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet"><!-- フォントオーサムのcss -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"><!-- GoogleフォントのCSS３行（Reggae One） -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher&family=Reggae+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- ヘッダー -->
+  <header class="page-header">
+    <!-- ロゴ -->
+    <h1>
+      <a href="index.html">
+        <img class="logo" src="images/rogo2.png" alt="鎌倉幕府ホーム">
+      </a>
+    </h1>
+    <!-- メインナビ -->
+    <nav>
+      <ul class="main-nav">
+        <li><a href="info.html">幕府概要</a></li>
+        <li><a href="goseibai.html">御成敗式目</a></li>
+        <li><a href="recruit.html">登用</a></li>
+        <li><a href="contact.html">御意見箱</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 御意見箱 -->
+    <article class="main-etc-a2">
+      <span id="m-title">
+        <h2>御意見箱</h2>
+      </span>
+      <hr>
+      <!-- 開発中 -->
+      <p><span id="msg">※開発中（未定）</span></p>
+      <!-- フォーム -->
+      <form action="#">
+        <div id="k-box">
+          <div>
+            <!-- <label for="name">お名前</label> -->
+            <!-- placeholder＝あらかじめ入力欄に表記されているテキスト -->
+            <input type="text" id="name" name="your-name" placeholder="名前 : (例) 梶原 景時" required>
+          </div>
+          <div>
+            <!-- <label for="email">メール</label> -->
+            <input type="email" id="email" name="your-email" placeholder="mail : (例) heizo_ヽ(´ー｀)ノ@kamakura.ne.jp"
+              required>
+          </div>
+          <div>
+            <!-- <label for="message">御意見</label> -->
+            <textarea id="message" name="your-message" placeholder="(例) 義経殿が私の意見を聞いてくれず、独断専行しがち…|ω・｀)"></textarea>
+          </div>
+          <!-- ボタン -->
+          <button type="submit" id="m-b">密告</button>
+        </div>
+      </form>
+    </article>
+  </main>
+
+  <!-- フッター -->
+  <footer class="page-footer">
+    <p>鎌倉幕府政所</p>
+    <p><small>&copy; 1203年 北条家</small></p>
+  </footer>
+
+  <!-- トップへ戻るボタン -->
+  <div id="t-btn">
+    <a href="#">上</a>
+  </div>
+
+  <script>
+    'use strict'
+
+    // 指定IDにアニメーション
+    document.getElementById('m-title').animate(
+      { color: ['white', 'black'], },
+      { fill: "forwards", duration: 1000 }
+    );
+
+    // トップへ戻るボタンの表示設定
+    window.addEventListener("scroll", function () {
+      const topB = document.getElementById('t-btn');
+      const sc = window.pageYOffset; // y方向のスクロール量取得
+      if (sc > 500) {
+        topB.style.display = 'block';
+      } else topB.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>

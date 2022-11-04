@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="これはHTMLCSSの課題作品です。"><!-- ページ説明文 -->
+  <meta name="robots" content="noindex, nofollow"><!-- インデックス不要 -->
+  <meta name="keywords" content="鎌倉幕府, 御成敗式目"><!-- ページキーワード -->
+  <title>登用</title>
+  <link rel="icon" href="images/favicon.png" type="image/png"><!-- ファビコン -->
+  <!-- css -->
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css"><!-- リセットCSS -->
+  <link href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet"><!-- フォントオーサムのcss -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"><!-- GoogleフォントのCSS３行（Reggae One） -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher&family=Reggae+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- ヘッダー -->
+  <header class="page-header">
+    <!-- ロゴ -->
+    <h1>
+      <a href="index.html">
+        <img class="logo" src="images/rogo2.png" alt="鎌倉幕府ホーム">
+      </a>
+    </h1>
+    <!-- メインナビ -->
+    <nav>
+      <ul class="main-nav">
+        <li><a href="info.html">幕府概要</a></li>
+        <li><a href="goseibai.html">御成敗式目</a></li>
+        <li><a href="recruit.html">登用</a></li>
+        <li><a href="contact.html">御意見箱</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 求人内容 -->
+    <article class="main-etc-a2">
+      <span id="m-title">
+        <h2>求む、御家人！</h2>
+      </span>
+      <hr>
+      <div id="rec">
+        <p>職種･･･武士</p>
+        <p>給与･･･土地（または米）</p>
+        <p>勤務地･･･全国（北九州への出張有り）</p>
+        <p>応募条件･･･<a href="t.html"><span id="rec-t">タイピング</span></a>出来る方（在宅勤務有り）</p>
+        <p>詳細は応相談（オンライン面接可）</p>
+      </div>
+    </article>
+
+    <!-- 主な勤務地 -->
+    <!-- <section id="location">
+      <div class="wrapper">
+        <div class="bkf">
+          <h2 class="sub-title">幕府（移転先）</h2>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3255.2549103233387!2d139.55901171473585!3d35.32449095706221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601845c92024807f%3A0x8e8adbccebf2d4a2!2z5aSn5YCJ5bmV5bqc6Leh!5e0!3m2!1sja!2sjp!4v1660878153859!5m2!1sja!2sjp"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="rht">
+          <h2 class="sub-title">六波羅探題</h2>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3268.390165658338!2d135.77135031524026!3d34.99693708035957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600108c62b0a1469%3A0x22f5b5763384cfc4!2z5YWt5rOi576F5o6i6aGM6Leh!5e0!3m2!1sja!2sjp!4v1660878632095!5m2!1sja!2sjp"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section> -->
+  </main>
+
+  <!-- フッター -->
+  <footer class="page-footer">
+    <p>鎌倉幕府政所</p>
+    <p><small>&copy; 1203年 北条家</small></p>
+  </footer>
+
+  <!-- トップへ戻るボタン -->
+  <div id="t-btn">
+    <a href="#">上</a>
+  </div>
+
+  <script>
+    'use strict'
+
+    // 指定IDにアニメーション
+    document.getElementById('m-title').animate(
+      { color: ['white', 'black'], }, // 白から黒へ
+      { fill: "forwards", duration: 1000 } // 終了時の状態で止まる,アニメーション時間(m秒)
+    );
+    document.getElementById('rec').animate(
+      { color: ['white', 'black'], },
+      { fill: "forwards", duration: 2000 }
+    );
+    document.getElementById('rec-t').animate( // タイピングは早めに表示
+      { color: ['white', 'crimson'], },
+      { fill: "forwards", duration: 1000 }
+    );
+
+    // トップへ戻るボタンの表示設定
+    window.addEventListener("scroll", function () {
+      const topB = document.getElementById('t-btn');
+      const sc = window.pageYOffset; // y方向のスクロール量取得
+      if (sc > 500) {
+        topB.style.display = 'block';
+      } else topB.style.display = 'none';
+    });
+  </script>
+</body>
+
+</html>

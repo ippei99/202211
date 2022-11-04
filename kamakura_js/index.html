@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="これはHTMLCSSの課題作品です。"><!-- ページ説明文 -->
+  <meta name="robots" content="noindex, nofollow"><!-- インデックス不要 -->
+  <meta name="keywords" content="鎌倉幕府, 御成敗式目"><!-- ページキーワード -->
+  <title>鎌倉幕府</title>
+  <link rel="icon" href="images/favicon.png" type="image/png"><!-- ファビコン -->
+  <!-- css -->
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css"><!-- リセットCSS -->
+  <link href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet"><!-- フォントオーサムのcss -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"><!-- GoogleフォントのCSS３行（Reggae One） -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher&family=Reggae+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"> <!-- 外部css -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> <!-- jqueryスニペット -->
+</head>
+
+<body>
+  <!-- ヘッダー -->
+  <header class="page-header">
+    <!-- ロゴ -->
+    <h1>
+      <a href="index.html">
+        <img class="logo" src="images/rogo2.png" alt="鎌倉幕府ホーム">
+      </a>
+    </h1>
+    <!-- メインナビ -->
+    <nav>
+      <ul class="main-nav">
+        <li><a href="info.html">幕府概要</a></li>
+        <li><a href="goseibai.html">御成敗式目</a></li>
+        <li><a href="recruit.html">登用</a></li>
+        <li><a href="contact.html">御意見箱</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- スライドショー等 -->
+    <article class="main-a1">
+      <section>
+        <div class="center">
+          <!-- 大画像用のdiv -->
+          <div id="put" class="slide">
+            <img src="images/top01.jpg" id="bigimg" alt="大画像">
+            <p id="bi-msg">執権政治、はじまってます。</p>
+          </div>
+
+          <!-- スライドショーのツールバー -->
+          <div class="toolbar">
+            <div class="snav">
+              <div id="prev">ひだり</div>
+              <div id="next">みぎ</div>
+            </div>
+          </div>
+
+          <!-- 大画像下の小画像リスト -->
+          <ul>
+            <li><img src="images/top01.jpg" class="thumb" data-image="images/top01.jpg" alt="浄妙寺"></li>
+            <li><img src="images/top02.jpg" class="thumb" data-image="images/top02.jpg" alt="傘"></li>
+            <li><img src="images/top03.jpg" class="thumb" data-image="images/top03.jpg" alt="茶器"></li>
+            <li><img src="images/top04.jpg" class="thumb" data-image="images/top04.jpg" alt="白い紫陽花"></li>
+            <li><img src="images/top05.jpg" class="thumb" data-image="images/top05.jpg" alt="青い紫陽花"></li>
+            <li><img src="images/top06.jpg" class="thumb" data-image="images/top06.jpg" alt="富士山"></li>
+          </ul>
+        </div>
+      </section>
+    </article>
+
+    <!-- お知らせ -->
+    <article class="main-a3">
+      <div id="news">
+        <span id="m-title">
+          <h2>北条からのお知らせ</h2>
+        </span>
+        <hr>
+        <p><span>御成敗式目</span>はじめました（泰時）</p>
+        <p>幕府、やや引越しました（泰時）</p>
+        <p><span>六波羅探題</span>はじめました（義時）</p>
+        <!-- ログを開くボタン -->
+        <div id="r_btn">
+          <p>過去ろぐ (*´д｀*)</p>
+        </div>
+
+        <!-- モーダル画像用のdiv -->
+        <div id="modal">
+          <p>1199年 十三人の合議制がはじまりました（義時）</p>
+          <p>1199年 諸事情により、梶原殿が追放されました（義時）</p>
+          <p>1203年 諸事情により、比企氏が亡くなられました（義時）</p>
+          <p>1203年 諸事情により、鎌倉殿が交代されました（義時）</p>
+          <p>1203年 父が執権となりました（義時）</p>
+          <p>1205年 諸事情により、畠山殿が亡くなられました（義時）</p>
+          <p>1205年 諸事情により、父を隠居させました（義時）</p>
+          <p>1213年 諸事情により、和田殿が滅亡されました（義時）</p>
+          <p>1219年 諸事情により、鎌倉殿が交代されました(義時）</p>
+          <p>1221年 倒幕の動き有り、反撃しました（義時）</p>
+          <p>1221年 六波羅探題はじめました（義時）</p>
+          <p>1224年 亡父・義時の跡を継ぎ執権就任（泰時）</p>
+          <p>1225年 叔母・政子が亡くなりました（泰時）</p>
+          <p>1225年 幕府を少し引っ越しました（泰時）</p>
+          <p>1232年 御成敗式目はじめました（泰時）</p>
+          <div id="n_btn">とじる</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- MAP -->
+    <section id="location">
+      <div class="wrapper">
+        <div class="bkf">
+          <h2 class="sub-title">幕府（移転先）</h2>
+          <!-- 幕府の位置 -->
+          <!-- <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3255.2549103233387!2d139.55901171473585!3d35.32449095706221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601845c92024807f%3A0x8e8adbccebf2d4a2!2z5aSn5YCJ5bmV5bqc6Leh!5e0!3m2!1sja!2sjp!4v1660878153859!5m2!1sja!2sjp"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+
+          <!-- ダミーMAP↓ -->
+          <span>
+            <p>これはダミーの地図です</p>
+          </span>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.079988238654!2d135.4942505147178!3d34.70316239059508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e68d95e3a70b%3A0x1baec822e859c84a!2z5aSn6Ziq6aeF!5e0!3m2!1sja!2sjp!4v1660873245747!5m2!1sja!2sjp"
+            width="800" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="rht">
+          <h2 class="sub-title">六波羅探題</h2>
+          <!-- 六波羅探題の位置 -->
+          <!-- <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3268.390165658338!2d135.77135031524026!3d34.99693708035957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600108c62b0a1469%3A0x22f5b5763384cfc4!2z5YWt5rOi576F5o6i6aGM6Leh!5e0!3m2!1sja!2sjp!4v1660878632095!5m2!1sja!2sjp"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+
+          <!-- ダミーMAP↓ -->
+          <span>
+            <p>これはダミーの地図です</p>
+          </span>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.079988238654!2d135.4942505147178!3d34.70316239059508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e68d95e3a70b%3A0x1baec822e859c84a!2z5aSn6Ziq6aeF!5e0!3m2!1sja!2sjp!4v1660873245747!5m2!1sja!2sjp"
+            width="800" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- 主要政策 -->
+    <article class="main-a3">
+      <span id="m-title2">
+        <h2>主要<span>政</span>策</h2>
+      </span>
+      <hr>
+      <div id="main-policy">
+        <p>御恩と奉公（御家人制度）<br>
+          評定会議による合議制<br>
+          六波羅探題の設置<br>
+          武士のための御成敗式目</p>
+      </div>
+    </article>
+
+    <!-- 主な機構 -->
+    <article class="main-a3">
+      <span id="m-title3">
+        <h2><span>主</span>な機構</h2>
+      </span>
+      <hr>
+      <div id="main-organization">
+        <!-- アコーディオン（トグル） -->
+        <dl id="acMenu">
+          <dt>評定会議</dt>
+          <dd>最高決定機関</dd>
+          <dt>引付会議</dt>
+          <dd>御家人の裁判機関</dd>
+          <dt>六波羅探題</dt>
+          <dd>朝廷監視/西国出張所</dd>
+          <dt>侍所</dt>
+          <dd>軍事等の部署</dd>
+          <dt>公文所</dt>
+          <dd>政務、財務等の部署</dd>
+          <dt>問注所</dt>
+          <dd>裁判関連の部署</dd>
+        </dl>
+      </div>
+    </article>
+  </main>
+
+  <!-- フッター -->
+  <footer class="page-footer">
+    <p>鎌倉幕府政所</p>
+    <p><small>&copy; 1203年 北条家</small></p>
+  </footer>
+
+  <!-- トップへ戻るボタン -->
+  <div id="t-btn">
+    <a href="#">上</a>
+  </div>
+
+  <script>
+    'use strict'
+
+    // スライドショー用配列
+    const images = [
+      'images/top01.jpg',
+      'images/top02.jpg',
+      'images/top03.jpg',
+      'images/top04.jpg',
+      'images/top05.jpg',
+      'images/top06.jpg',
+    ];
+
+    // スライドショー用のメッセージ配列
+    const imsg = [
+      '三代執権　北条 泰時',
+      '二代執権　北条 義時',
+      '初代執権　北条 時政',
+      '三代将軍　源 実朝',
+      '二代将軍　源 頼家',
+      '初代将軍　源 頼朝',
+    ];
+
+    // 変数 current(現在)
+    let current = 0;
+
+    // スライドショー画像変更ファンクション
+    function changeImage(num) {
+      if (current + num >= 0 && current + num < images.length) {
+        current += num;
+        document.getElementById('bigimg').src = images[current];
+        document.getElementById('bi-msg').textContent = imsg[current]; //画像変更時にメッセージも変更
+        // 最後の画像までいったら最初に戻る
+      } else if (current === images.length - 1) {
+        current = 0
+        document.getElementById('bigimg').src = images[current];
+        document.getElementById('bi-msg').textContent = imsg[current];
+        // 最初の画像で戻るを押した時に最後に行く
+      } else {
+        current = images.length - 1
+        document.getElementById('bigimg').src = images[current];
+        document.getElementById('bi-msg').textContent = imsg[current];
+      }
+    };
+
+    // 画像戻るボタン押した時
+    document.getElementById('prev').onclick = function () {
+      changeImage(-1);
+    }
+    // 画像次へボタン押した時
+    document.getElementById('next').onclick = function () {
+      changeImage(1);
+    }
+
+    // 小画像クリック時の大画像の切替
+    const thumbs = document.querySelectorAll('.thumb');
+    thumbs.forEach(function (item, index) {
+      item.onclick = function () {
+        document.getElementById('bigimg').src = this.dataset.image; // 大画像src書換
+        document.getElementById('bi-msg').textContent = imsg[index]; // 大画像上の文入替
+      }
+    });
+
+    //ログボタン押した時
+    $('#r_btn').on('click', function () {
+      $('#modal').css('display', 'block');
+    });
+
+    //ログを閉じるボタン押した時
+    $('#n_btn').on('click', function () {
+      $('#modal').css('display', 'none');
+    });
+
+    // 指定IDにアニメーション(各タイトル)
+    document.getElementById('bi-msg').animate(
+      { color: ['black', 'white'], }, // 白から黒へ
+      { fill: "forwards", duration: 2000 } // 終了時の状態で止まる,アニメーション時間(m秒)
+    );
+    document.getElementById('m-title').animate(
+      { color: ['white', 'black'], },
+      { fill: "forwards", duration: 3000 }
+    );
+    document.getElementById('m-title2').animate(
+      { color: ['white', 'black'], },
+      { fill: "forwards", duration: 4000 }
+    );
+    document.getElementById('m-title3').animate(
+      { color: ['white', 'black'], },
+      { fill: "forwards", duration: 5000 }
+    );
+
+    // トップへ戻るボタンの表示設定
+    window.addEventListener("scroll", function () {
+      const topB = document.getElementById('t-btn');
+      const sc = window.pageYOffset; // y方向のスクロール量取得
+      if (sc > 500) {
+        topB.style.display = 'block';
+      } else topB.style.display = 'none';
+    });
+
+    // お知らせ(news)の表示設定
+    let newsi = 0 // お知らせの表示回数カウント用変数
+    window.addEventListener("scroll", function () {
+      const sc = window.pageYOffset;
+      if (sc > 400) {
+        if (newsi === 0) { // 黒字化処理が初回時のみ実行
+          document.getElementById('news').animate(
+            { color: ['white', 'black'], },
+            { fill: "forwards", duration: 1500 }
+          );
+          newsi++ // 表示回数+1（再処理しないように）
+        };
+      };
+    });
+
+    // 主要政策(main-policy)の表示設定
+    let mpi = 0 // 主要政策の表示回数カウント用変数
+    window.addEventListener("scroll", function () {
+      const sc = window.pageYOffset;
+      if (sc > 2000) {
+        if (mpi === 0) {
+          document.getElementById('main-policy').animate(
+            { color: ['white', 'black'], },
+            { fill: "forwards", duration: 1000 }
+          );
+          mpi++
+        };
+      };
+    });
+
+    // 主な機構のアコーディオンの開閉（トグル）
+    $(function () {
+      $("#acMenu dt").on("click", function () {
+        $(this).next().slideToggle();
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>

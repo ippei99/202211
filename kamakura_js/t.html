@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="これはHTMLCSSの課題作品です。"><!-- ページ説明文 -->
+  <meta name="robots" content="noindex, nofollow"><!-- インデックス不要 -->
+  <meta name="keywords" content="鎌倉幕府, 御成敗式目"><!-- ページキーワード -->
+  <title>幕府概要</title>
+  <link rel="icon" href="images/favicon.png" type="image/png"><!-- ファビコン -->
+  <!-- css -->
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css"><!-- リセットCSS -->
+  <link href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" rel="stylesheet"><!-- フォントオーサムのcss -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"><!-- GoogleフォントのCSS３行（Reggae One） -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher&family=Reggae+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<!-- ページ読込時にゲームセットファンクションを読込む -->
+<body onload="gameSet()">
+
+  <!-- ヘッダー -->
+  <header class="page-header">
+    <!-- ロゴ -->
+    <h1>
+      <a href="index.html">
+        <img class="logo" src="images/rogo2.png" alt="鎌倉幕府ホーム">
+      </a>
+    </h1>
+    <!-- メインナビ -->
+    <nav>
+      <ul class="main-nav">
+        <li><a href="info.html">幕府概要</a></li>
+        <li><a href="goseibai.html">御成敗式目</a></li>
+        <li><a href="recruit.html">登用</a></li>
+        <li><a href="contact.html">御意見箱</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 鎌倉タイピング練習場 -->
+    <article class="main-etc-a2">
+      <span id="m-title">
+        <h2>鎌倉<span>タ</span>イピング場</h2>
+      </span>
+      <hr>
+      <!-- 開始ボタン -->
+      <button id="b">はじめ</button>
+      <!-- 練習フィールド（結果表示兼用） -->
+      <div id="p_field"></div>
+    </article>
+
+    <!-- 参考記録 -->
+    <table id="tt">
+      <caption>参考記録</caption>
+      <tr>
+        <th>名前</th>
+        <th>秒</th>
+      </tr>
+      <tr>
+        <td>源義経</td>
+        <td>13秒</td>
+      </tr>
+      <tr>
+        <td>畠山重忠</td>
+        <td>24秒</td>
+      </tr>
+      <tr>
+        <td>和田義盛</td>
+        <td>66秒</td>
+      </tr>
+    </table>
+
+    <!-- 戻るボタン -->
+    <button id="rb">戻る</button>
+  </main>
+  <!-- スペース調整用div -->
+  <div id="sp">
+  </div>
+
+  <!-- フッター -->
+  <footer class="page-footer">
+    <p>鎌倉幕府政所</p>
+    <p><small>&copy; 1203年 北条家</small></p>
+  </footer>
+
+  <!-- トップへ戻るボタン -->
+  <div id="t-btn">
+    <a href="#">上</a>
+  </div>
+
+  <script>
+    'use strict'
+
+    // キー押下時にtype関数を呼び出す
+    document.onkeydown = type;
+
+    // アルファベット(26文字)を格納する配列
+    const alpha = ["Ａ", "Ｂ", "Ｃ", "Ｄ", "Ｅ", "Ｆ", "Ｇ", "Ｈ", "Ｉ", "Ｊ", "Ｋ", "Ｌ", "Ｍ", "Ｎ", "Ｏ", "Ｐ", "Ｑ", "Ｒ", "Ｓ", "Ｔ", "Ｕ", "Ｖ", "Ｗ", "Ｘ", "Ｙ", "Ｚ"];
+    // アルファベットのキーコードを格納する配列
+    const kcode = [65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90];
+    let rnd = []; //乱数用の配列
+    let question = ""; // 問題文格納用の変数
+    let cn = 0; // 何問めかカウント用の変数
+    let typStart, typEnd; // 開始と終了時間用の変数
+    const soundEffect = new Audio('cutting_napa.mp3'); // 効果音用（白菜切る音）の定数
+
+    // 乱数格納用の関数
+    const ransu = function () {
+      for (let i = 0; i < 40; i++) { // 40回繰り返す(i=0～39)
+        rnd[i] = Math.floor(Math.random() * 26); // 25以下の乱数を配列rndへ代入
+      };
+    };
+
+    // タイピング問題作成用の関数
+    const gameSet = function () {
+      question = ""; // 問題文の変数をクリア
+      cn = 0; // 問題数カウント用の変数をクリア
+      ransu(); // 乱数作成の関数を呼び出す（配列rndに乱数40個格納済）
+      for (let i = 0; i < 40; i++) { // 40回繰り返す(0始まり)
+        question = question + alpha[rnd[i]]; //変数questionに繋げた問題文を代入（乱数で指定された配列alpha内の文字を繋ぐ）
+      };
+      $('#p_field').html(question); // 練習フィールドに問題文を表示
+    };
+
+    // キー入力を受け取る関数
+    function type() {
+      let kc = event.keyCode // 入力されたキーコードを変数kcに代入
+      if (kc === kcode[rnd[cn]]) { // 入力されたキーコードと問題文のキーコードを比較
+
+        soundEffect.currentTime = 0; // 毎回再生位置を0に戻して連続したタイピングに効果音を対応させる
+        soundEffect.play(); // 効果音をならす
+
+        if (cn === 0) { // キー入力が1回目なら（0始まり）
+          typStart = new Date(); // 開始時刻を記録
+        }
+        cn++; // カウント数を＋１
+
+        if (cn < 40) { // 40回入力したか確認
+          question = question.substring(1, question.Length);  // 問題文の2文字目（0始まり）～最後までの文字を切り取り代入
+          $('#p_field').html(question); // 問題を再表示（１文字目が消された状態の問題）
+        } else { // 41回目なら下記の処理へ
+          typEnd = new Date(); // 終了時間を記録
+          let keika = typEnd - typStart; // 終了時間から開始時間を引いた時間を代入
+          let sec = Math.floor(keika / 1000); // 秒数を代入(ミリ秒を千で割って整数部分だけにする)
+          let fin = "タイピング時間：" + sec + "秒"; // 終了の文字列作成
+          $('#p_field').html(fin); // 練習フィールドに上記文字列表示
+          $('#tt').css('display', 'block'); // 参考記録表を表示
+          $('#b').css('display', 'none'); // スタートボタンを非表示
+          $('#rb').css('display', 'block'); // 戻るボタン表示
+        }
+      }
+    }
+
+    // 開始ボタンをクリックすると枠を表示
+    $('#b').on('click', function () {
+      $('#p_field').css('display', 'block')
+    });
+
+    // 戻るボタンをクリックすると枠を表示
+    $('#rb').on('click', function () {
+      location.reload();
+    });
+
+    // トップへ戻るボタンの表示設定
+    window.addEventListener("scroll", function () {
+      const topB = document.getElementById('t-btn');
+      const sc = window.pageYOffset; // y方向のスクロール量取得
+      if (sc > 500) {
+        topB.style.display = 'block';
+      } else topB.style.display = 'none';
+    });
+  </script>
+</body>
+
+</html>
