@@ -1,13 +1,20 @@
-<?php
-	$field_name = $_POST['your-name'];
-	$field_email = $_POST['your-email'];
-	$field_message = $_POST['your-message'];
-	$mail_to = 'ippei99@gmail.com';
-	$subject = 'Message from a site visitor '.$field_name;
-	$body_message = 'From: '.$field_name."\n";
-	$body_message .= 'E-mail: '.$field_email."\n";
-	$body_message .= 'Message: '.$field_message;
-	$headers = 'From: '.$field_email."\r\n";
-	$headers .= 'Reply-To: '.$field_email."\r\n";
-	$mail_status = mail($mail_to, $subject, $body_message, $headers);
-?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <?php
+      mb_language("Japanese");
+      mb_internal_encoding("UTF-8");
+      $to = $_POST['your-name'];
+      $title = $_POST['title'];
+      $content = $_POST['content'];
+      if(mb_send_mail($to, $title, $content)){
+        echo "<p style=\"color:red;\">メールを送信しました</p>";
+      } else {
+        echo "メールの送信に失敗しました";
+      };
+    ?>
+  </body>
+</html>
