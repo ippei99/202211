@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -11,10 +11,11 @@
       $title = $_POST['your-name'];
       $content = $_POST['your-message'];
       if(mb_send_mail($to, $title, $content)){
-        echo "<p style=\"color:red;\">メールを送信しました</p>";
+        echo "<p>メールを送信しましたヽ(´ー｀)ノ</p>";
       } else {
-        echo "メールの送信に失敗しました";
+        echo "<p>メールの送信に失敗しました</p>";
       };
+			echo "<a href='index.html'>戻る</a>";
     ?>
   </body>
 </html>
